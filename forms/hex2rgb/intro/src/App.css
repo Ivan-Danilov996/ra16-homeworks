@@ -1,0 +1,26 @@
+.container {
+  text-align: center;
+}
+
+.converter {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hex, .result {
+  display: flex;
+  width: 200px;
+  height: 30px;
+  box-sizing: border-box;
+  margin: 2px;
+  justify-content: center;
+  align-items: center;
+}
+
+.result {
+  background-color: black;
+  color: white;
+}
