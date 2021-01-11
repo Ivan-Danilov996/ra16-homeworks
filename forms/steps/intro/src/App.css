@@ -1,0 +1,57 @@
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
+label {
+  margin-bottom: 5px;
+  display: block;
+}
+
+form {
+  display: flex;
+  justify-content: space-between;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+.btn {
+  display: block;
+}
+
+th {
+  margin-bottom: 10px;
+}
+
+table {
+  width: 100%;
+  text-align: center;
+}
+
+th {
+  padding-bottom: 20px;
+}
+
+td {
+  padding: 5px 0;
+}
+
+.events {
+  display: flex;
+  justify-content: center;
+}
+
+.edit, .delete {
+  cursor: pointer;
+  margin: 0 5px;
+}
+
