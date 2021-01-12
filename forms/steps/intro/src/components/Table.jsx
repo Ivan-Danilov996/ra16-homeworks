@@ -9,7 +9,24 @@ export default function Table({ steps, deleteStep, editStep }) {
                 </tr>
             </thead>
             <tbody>
-                {steps.map(step => 
+                {
+                    steps.sort((a, b) => {
+                        const dateA = new Date(a.date).getTime();
+                        const dateB = new Date(b.date).getTime();
+                        return dateB - dateA;
+                    })
+                        .map(step => (
+                            <tr key={step.id}>
+                                <td>{step.date}</td>
+                                <td>{step.distance}</td>
+                                <td className="events">
+                                    <div className="edit" onClick={() => editStep(step.id)}>✎</div>
+                                    <div className="delete" onClick={() => deleteStep(step.id)}>✘</div>
+                                </td>
+                            </tr>
+                        ))
+                }
+                {/* {steps.map(step => 
                 <tr key={step.id}>
                     <td>{step.date}</td>
                     <td>{step.distance}</td>
@@ -17,7 +34,7 @@ export default function Table({ steps, deleteStep, editStep }) {
                         <div className="edit" onClick={() => editStep(step.id)}>✎</div>
                         <div className="delete" onClick={() => deleteStep(step.id)}>✘</div>
                     </td>
-                </tr>)}
+                </tr>)} */}
             </tbody>
         </table>
     )

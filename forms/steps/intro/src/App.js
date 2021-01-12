@@ -24,8 +24,25 @@ function App() {
 
   const sumbitHandler = (e) => {
     e.preventDefault()
+
+    let count = false
+
     const step = new StepModel(nanoid(), form.date, form.distance)
-    setSteps(prevSteps => [...prevSteps, step]);
+
+    const newSteps = steps.map((st) => {
+      if (st.date === step.date) {
+        count = !count
+        return Object.assign({}, st, { distance: parseInt(st.distance) + parseInt(step.distance) })
+      }
+      return st
+    })
+
+    setSteps(newSteps)
+
+    if (!count) {
+      setSteps(prevSteps => [...prevSteps, step]);
+    }
+
     setForm(initialForm)
   }
 
