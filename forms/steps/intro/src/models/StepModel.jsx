@@ -1,9 +1,7 @@
-class StepModel {
+export default class StepModel {
     constructor(id, date, distance) {
-        this.id = id,
-        this.date = date,
+        this.id = id
+        this.date = date
         this.distance = distance
     }
 }
-
-export default StepModel
