@@ -1,0 +1,101 @@
+*{padding: 0; margin: 0}
+
+.container {
+    max-width: 1024px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+ul {
+    margin: 0;
+}
+
+.news__navigation {
+    display: flex;
+    align-items: center;
+}
+
+.news__navigation-items {
+    display: flex;
+}
+
+.news__navigation-item {
+    margin-right: 10px;
+}
+
+.news__item {
+    margin: 5px 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.currencys {
+    display: flex;
+}
+
+.currency {
+    font-weight: 700;
+    margin-right: 10px;
+}
+
+.logo img {
+    width: 80px;
+}
+
+.search-bar {
+    margin-top: 30px;
+}
+
+.categories {
+    display: flex;
+}
+
+.category {
+    margin-right: 10px;
+}
+
+.search {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+input {
+    width: 100%;
+}
+
+.banner {
+    width: 100%;
+    height: 70px;
+    background-color: blue;
+    margin-top: 20px;
+}
+
+.wigets {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.wiget {
+    margin: 10px 0;
+    margin-right: 50px;
+}
+
+.broadcast-img {
+    width: 10px;
+    height: 10px;
+}
