@@ -1,0 +1,132 @@
+.form {
+    display: flex;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.field:last-child {
+    justify-content: flex-end;
+}
+
+.clocks {
+    display: flex;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+.clock {
+    margin-right: 10px;
+    text-align: center;
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 1px solid black;
+    position: relative;
+}
+
+.remove {
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-radius: 50%;
+    border: 1px solid black;
+    outline: none;
+}
+
+.remove:hover {
+    cursor: pointer;
+}
+
+/* .min {
+    position: absolute;
+    width: 50%;
+    border: 1px solid black;
+    top: 50%;
+    left: 50%;
+}
+
+.sec {
+    position: absolute;
+    width: 50%;
+    border: 1px dashed black;
+    top: 50%;
+    left: 50%;
+}
+
+.hour {
+    position: absolute;
+    width: 25%;
+    border: 1px solid black;
+    top: 50%;
+    left: 50%;
+} */
+
+.hour {
+    width: 3px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    /* animation: time 86400s infinite linear;
+    animation: time 60s infinite linear; */
+}
+.hour:before {
+    position: absolute;
+    content: "";
+    background: #262626;
+    height: 30px;
+    width: 3px;
+    top: 20px;
+}
+
+.min {
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    /* animation: time 3600s infinite linear;
+    animation: time 30s infinite linear; */
+}
+.min:before {
+    position: absolute;
+    content: "";
+    background: #262626;
+    height: 50px;
+    width: 1px;
+    top: 0;
+}
+
+.sec {
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    /* animation: time 60s infinite linear; */
+    /* animation: time 15s infinite linear; */
+}
+.sec:before {
+    position: absolute;
+    content: "";
+    /* background: #fd1111; */
+    border: 1px dashed #fd1111;
+    height: 50px;
+    width: 1px;
+    top: 0;
+}
+
+/* @keyframes time {
+    to {
+        transform: rotate(360deg);
+    }
+} */
