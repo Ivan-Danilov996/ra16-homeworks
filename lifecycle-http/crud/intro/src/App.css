@@ -1,0 +1,35 @@
+.title {
+  display: flex;
+  align-items: baseline;
+}
+.notes {
+  display: flex;
+}
+
+.note {
+  padding: 10px;
+  border: 1px solid black;
+  max-width: 200px;
+  position: relative;
+  margin: 30px;
+}
+
+.remove {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(100%, -100%);
+}
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+#input {
+  max-width: 400px;
+}
+
+.form {
+  display: flex;
+  align-items: flex-end;
+}
