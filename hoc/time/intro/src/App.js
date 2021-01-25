@@ -1,28 +1,26 @@
 import './App.css';
 import React, { useState } from 'react';
 import moment from 'moment'
-// const fullDate = moment('2021-01-22 13:24:00')
 
-// const time = moment(fullDate).format('HH:mm:ss')
-// const date = moment(fullDate).format('YYYY-MM-DD')
-
-// console.log(fullDate.fromNow())
-
-
-function DateTimePretty(props) {
-
-  const newDate = moment(props.date).fromNow()
-
-  function DateTime(props) {
+function widthDateTimePretty(Component, props) {
+  function UprgadedComponent({ date }) {
+    const newDate = moment(date).fromNow()
     return (
-      <p className="date">{props.date}</p>
+      <Component date={newDate} />
     )
   }
-  return (
-    <DateTime date={newDate}/>
-  )
+  return UprgadedComponent
 }
 
+const DateTimePretty = widthDateTimePretty(DateTime)
+
+
+
+function DateTime(props) {
+  return (
+    <p className="date">{props.date}</p>
+  )
+}
 
 
 function Video(props) {
