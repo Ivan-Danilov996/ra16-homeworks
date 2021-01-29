@@ -8,7 +8,6 @@ export default function Details({ id }) {
     useEffect(() => {
         async function fetchData() {
             setLoading(true)
-            console.log(id)
             try {
                 const response = await fetch(`https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/hooks-context/use-effect/data/${id}.json`);
                 const data = await response.json();
@@ -30,7 +29,7 @@ export default function Details({ id }) {
 
     return (
         <div className="details">
-            <img src={info.avatar} alt="" />
+            {isLoading?<p>Loading...</p> : <img src={info.avatar} alt="" />}
             <div className="name">{info.name}</div>
             <div className="city">City: {info.details ? info.details.city : null}</div>
             <div className="company">Company: {info.details ? info.details.company : null}</div>
