@@ -2,25 +2,32 @@ import './App.css';
 
 import React, { useState } from 'react';
 
-function SetHighlights(Component, props) {
-  if (props.views >= 1000) {
-    return (
-      <Popular>
-        <Component {...props} />
-      </Popular>
-    )
-  } else if (props.views < 100) {
-    return (
-      <New>
-        <Component {...props} />
-      </New>
-    )
-  } else {
-    return (
-      <Component {...props} />
-    )
-  }
+function withHighlights(Component) {
+
+  function WrappedComponent(props) {
+      if (props.views >= 1000) {
+        return (
+          <Popular>
+            <Component {...props} />
+          </Popular>
+        )
+      } else if (props.views < 100) {
+        return (
+          <New>
+            <Component {...props} />
+          </New>
+        )
+      } else {
+        return (
+          <Component {...props} />
+        )
+      }
+    }
+  return WrappedComponent
 }
+
+const UpgradedVideo = withHighlights(Video)
+const UpgradedArticle = withHighlights(Article)
 
 function New(props) {
   return (
@@ -63,12 +70,12 @@ function List(props) {
     switch (item.type) {
       case 'video':
         return (
-          SetHighlights(Video, { ...item })
+          UpgradedVideo({ ...item })
         );
 
       case 'article':
         return (
-          SetHighlights(Article, { ...item })
+          UpgradedArticle({ ...item })
         );
     }
   });
