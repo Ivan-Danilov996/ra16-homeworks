@@ -15,7 +15,6 @@ let nextId = 1;
 const router = new Router();
 
 router.get('/posts', async (ctx, next) => {
-    console.log(posts)
     ctx.response.body = posts;
 });
 
