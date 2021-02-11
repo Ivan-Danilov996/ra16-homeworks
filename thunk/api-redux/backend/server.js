@@ -10,10 +10,10 @@ app.use(koaBody({ json: true }));
 
 let nextId = 1;
 const services = [
-    { id: nextId++, name: 'Замена стекла', price: 21000, content: 'Стекло оригинал от Apple'},
-    { id: nextId++, name: 'Замена дисплея', price: 25000, content: 'Дисплей оригинал от Foxconn'},
-    { id: nextId++, name: 'Замена аккумулятора', price: 4000, content: 'Новый на 4000 mAh'},
-    { id: nextId++, name: 'Замена микрофона', price: 2500, content: 'Оригинальный от Apple'},
+    { id: nextId++, name: 'Замена стекла', price: 21000, content: 'Стекло оригинал от Apple' },
+    { id: nextId++, name: 'Замена дисплея', price: 25000, content: 'Дисплей оригинал от Foxconn' },
+    { id: nextId++, name: 'Замена аккумулятора', price: 4000, content: 'Новый на 4000 mAh' },
+    { id: nextId++, name: 'Замена микрофона', price: 2500, content: 'Оригинальный от Apple' },
 ];
 
 const router = new Router();
@@ -34,7 +34,7 @@ function fortune(ctx, body = null, status = 200) {
 }
 
 router.get('/api/services', async (ctx, next) => {
-    const body = services.map(o => ({id: o.id, name: o.name, price: o.price}))
+    const body = services.map(o => ({ id: o.id, name: o.name, price: o.price }))
     return fortune(ctx, body);
 });
 router.get('/api/services/:id', async (ctx, next) => {
@@ -48,17 +48,21 @@ router.get('/api/services/:id', async (ctx, next) => {
     return fortune(ctx, body);
 });
 router.post('/api/services', async (ctx, next) => {
-    const id = ctx.request.body.id;
+    const id = parseInt(ctx.request.body.id);
+    
     if (id !== 0) {
+        console.log(ctx.request.body)
         const index = services.findIndex(o => o.id === id);
+        console.log(index)
         if (index === -1) {
             const status = 404;
             return fortune(ctx, null, status);
         }
         services[index] = ctx.request.body;
+        console.log(services)
         return fortune(ctx, null, 204);
     }
-    
+
     services.push({ ...ctx.request.body, id: nextId++ });
     const status = 204;
     return fortune(ctx, null, status);

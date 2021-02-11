@@ -29,7 +29,7 @@ function fortune(ctx, body = null, status = 200) {
             }
 
             reject(new Error('Something bad happened'));
-        }, 3 * 1000);
+        }, 1000);
     })
 }
 
